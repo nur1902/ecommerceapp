@@ -1,0 +1,67 @@
+{
+  "project_info": {
+    "project_number": "874388073520",
+    "project_id": "batch-13-26713",
+    "storage_bucket": "batch-13-26713.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874388073520:android:ba3cb842df22ea242851f5",
+        "android_client_info": {
+          "package_name": "com.example.crafty_bay"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATrn-btdTbI5UPt-SB_HS4t6ENB-dZhDY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874388073520:android:59994de58399b2be2851f5",
+        "android_client_info": {
+          "package_name": "com.example.untitled1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATrn-btdTbI5UPt-SB_HS4t6ENB-dZhDY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:874388073520:android:ee01f60a85966b192851f5",
+        "android_client_info": {
+          "package_name": "com.tasty.com"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyATrn-btdTbI5UPt-SB_HS4t6ENB-dZhDY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
