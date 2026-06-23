@@ -1,9 +1,11 @@
+import 'package:crafty_bay/Screens/Main/main_nav_bar.dart';
 import 'package:crafty_bay/Screens/sign_up_screen.dart';
 import 'package:crafty_bay/Screens/sign_in.dart';
 import 'package:flutter/material.dart';
 
+
 import '../Screens/forget_password.dart';
-import '../Screens/home_screen.dart';
+import '../Screens/sign_in.dart';
 import '../Screens/splash_screen.dart';
 
 class Routes {
@@ -21,6 +23,9 @@ class Routes {
 
        case ForgetPassword.name:
          widget=ForgetPassword();
+
+       case MainNavBar.name:
+         widget=MainNavBar();
 
 
 

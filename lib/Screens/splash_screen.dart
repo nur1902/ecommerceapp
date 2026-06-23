@@ -1,3 +1,4 @@
+import 'package:crafty_bay/Screens/Main/main_nav_bar.dart';
 import 'package:crafty_bay/Screens/home_screen.dart';
 import 'package:crafty_bay/Screens/sign_up_screen.dart';
 import 'package:crafty_bay/Screens/sign_in.dart';
@@ -14,12 +15,15 @@ class SplashScreen extends StatefulWidget {
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
+
+
+
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     // TODO: implement initState
     Future.delayed(Duration(seconds: 2),(){
-      Navigator.pushReplacementNamed(context, SignUpScreen.name);
+      Navigator.pushReplacementNamed(context, MainNavBar.name);
     });
     super.initState();
   }
