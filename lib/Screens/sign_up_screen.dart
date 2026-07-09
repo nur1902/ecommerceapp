@@ -28,14 +28,14 @@ GlobalKey<FormState> formkey = GlobalKey<FormState>();
 class _SignUpScreenState extends State<SignUpScreen> {
   void _signup(){
     if(formkey.currentState!.validate()){
-      Navigator.pushReplacementNamed(context, Signin.name);
+      Navigator.pushNamed(context, Signin.name);
       print('${fnamecontroller.text} ${lnamecontroller.text} ${mobilecontroller.text} ${citycontroller.text} ${addresscontroller.text}');
 
     }
   }
 
   void _signin(){
-    Navigator.pushReplacementNamed(context, Signin.name);
+    Navigator.pushNamed(context, Signin.name);
   }
 
   @override
