@@ -1,3 +1,4 @@
+import 'package:crafty_bay/features/home/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../sign_in.dart';
@@ -10,7 +11,7 @@ static const String name='/mainnavbar';
 }
 int _n=0;
 final List<Widget> _widget=[
-  SignUpScreen(),
+  HomeScreen(),
   Signin(),
   SignUpScreen(),
   Signin(),
