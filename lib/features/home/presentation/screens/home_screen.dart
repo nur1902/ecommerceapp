@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../widget/actionbuttonwidget.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
+import '../../../../widget/heading_bar.dart';
+import '../../../../widget/home_carosol_slider.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -26,36 +29,47 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
 
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0),
-            child: TextField(
+      body: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 40,
+              child: TextField(
 
-              decoration: InputDecoration(prefixIcon: Icon(Icons.search_rounded),
-                fillColor: Colors.grey.shade200,
-              filled: true,
-              hintText: 'Search',
-              hintStyle: TextStyle(color: Colors.grey.shade400),
-              enabledBorder: OutlineInputBorder(
-                borderSide: BorderSide.none,
-                borderRadius: BorderRadius.all(Radius.circular(10))
-              ),
-
-                focusedBorder: OutlineInputBorder(
+                decoration: InputDecoration(prefixIcon: Icon(Icons.search_rounded),
+                  fillColor: Colors.grey.shade200,
+                filled: true,
+                hintText: 'Search',
+                hintStyle: TextStyle(color: Colors.grey.shade400),
+                enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide.none,
-                    borderRadius: BorderRadius.all(Radius.circular(10))
+                  borderRadius: BorderRadius.all(Radius.circular(10))
+                ),
 
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide.none,
+                      borderRadius: BorderRadius.all(Radius.circular(10))
 
-            ),
 
               ),
+
+                ),
+              ),
             ),
-          )
-        ],
+            SizedBox(height: 15,),
+            HomeCarosolSlider(),
+            SizedBox(height: 15,),
+            HeadingBar()
+
+
+
+          ],
+        ),
       ),
     );
   }
 }
+
 
 
