@@ -60,7 +60,9 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(height: 15,),
             HomeCarosolSlider(),
             SizedBox(height: 15,),
-            HeadingBar()
+            HeadingBar(),
+            SizedBox(height: 15,),
+
 
 
 
