@@ -56,13 +56,13 @@ class DefaultFirebaseOptions {
     projectId: 'batch-13-26713',
     storageBucket: 'batch-13-26713.firebasestorage.app',
   );
-
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyAtq-DMwxi5hGZ-zeESmxmLhmJnphpSvXo',
     appId: '1:874388073520:ios:85b768cd87495d9b2851f5',
     messagingSenderId: '874388073520',
     projectId: 'batch-13-26713',
     storageBucket: 'batch-13-26713.firebasestorage.app',
+    iosClientId: '874388073520-c66i8sg2bpcdanbecfl5b2j9j448lv93.apps.googleusercontent.com',
     iosBundleId: 'com.example.craftyBay',
   );
 }

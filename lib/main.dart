@@ -8,6 +8,7 @@ import 'package:crafty_bay/app/themedata.dart';
 import 'package:crafty_bay/firebase_options.dart';
 import 'package:crafty_bay/provider/localization_provider.dart';
 import 'package:crafty_bay/provider/themeprovider.dart';
+import 'package:crafty_bay/provider/user_info_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/material.dart';
@@ -40,6 +41,7 @@ Future<void> main() async {
     return true;
   };
 
+
   runApp(const MyApp());
 }
 
@@ -51,7 +53,8 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (_)=> LocalizationProvider()..loadSavedLocale()),
-        ChangeNotifierProvider(create: (_)=> Themeprovider()..loadSavedtheme())
+        ChangeNotifierProvider(create: (_)=> Themeprovider()..loadSavedtheme()),
+        ChangeNotifierProvider(create: (_)=>UserInfoProvider()..getUserdata())
       ],
       child: Consumer<LocalizationProvider>(
         builder: (context, LocalizationProvider, _) {
@@ -59,6 +62,7 @@ class MyApp extends StatelessWidget {
           return Consumer<Themeprovider>(
             builder: (BuildContext context, Themeprovider , _) {
             return MaterialApp(
+              debugShowCheckedModeBanner: false,
               title: 'Crafty Bay',
               onGenerateRoute: Routes.onGenerateRoute ,
               initialRoute:  SplashScreen.name,
@@ -66,11 +70,11 @@ class MyApp extends StatelessWidget {
               darkTheme: Themedata.darkTheme,
               themeMode: Themeprovider.theme,
               localizationsDelegates: AppLocalizations.localizationsDelegates,
-            
+
               supportedLocales: AppLocalizations.supportedLocales,
               locale: LocalizationProvider.local,
-            
-            
+
+
             );}
           );
         }

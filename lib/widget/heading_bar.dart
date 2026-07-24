@@ -1,9 +1,13 @@
 
 import 'package:flutter/material.dart';
 class HeadingBar extends StatelessWidget {
+  final String text;
+
   const HeadingBar({
-    super.key,
+    super.key, required this.text
   });
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -11,9 +15,9 @@ class HeadingBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Text('All Categories',
+          Text('${text}',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
-          Text("See All",style: TextStyle(fontSize: 15, color: Colors.lightBlue, fontWeight: FontWeight.w500),)
+          Text("See All",style: TextStyle(fontSize: 15, color: Colors.teal, fontWeight: FontWeight.w500),)
         ],),
     );
   }

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 
 
 import '../Screens/forget_password.dart';
+import '../Screens/login_screen.dart';
 import '../Screens/sign_in.dart';
 import '../Screens/splash_screen.dart';
 
@@ -26,6 +27,9 @@ class Routes {
 
        case MainNavBar.name:
          widget=MainNavBar();
+
+       // case LoginScreen.name:
+       //   widget=LoginScreen();
 
 
 

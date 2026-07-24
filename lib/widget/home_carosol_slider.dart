@@ -37,7 +37,7 @@ class _HomeCarosolSliderState extends State<HomeCarosolSlider> {
         CarouselSlider(
         items: _widget,
         options: CarouselOptions(
-          height: 150,
+          height: 200,
           viewportFraction: 1,
           initialPage: 0,
           enableInfiniteScroll: true,

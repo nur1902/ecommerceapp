@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 class ActionButtonWidget extends StatelessWidget {
 
   const ActionButtonWidget({
-    super.key, required this.icons
+    super.key, required this.icons, required this.callback
   });
   final IconData icons;
+  final VoidCallback callback;
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +15,7 @@ class ActionButtonWidget extends StatelessWidget {
           color: Colors.grey.shade100,
           borderRadius: BorderRadius.circular(12)
       ),
-      child: icons!=null?IconButton(onPressed: (){}, icon: Icon(icons)):null,
+      child: IconButton(onPressed: callback, icon: Icon(icons)),
     );
   }
 }
