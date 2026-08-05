@@ -34,6 +34,7 @@ void _forgetpassword(){
   final themeprovider=context.read<Themeprovider>();
     final localizationprovider = context.read<LocalizationProvider>();
     return Scaffold(
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Center(
           child: SafeArea(

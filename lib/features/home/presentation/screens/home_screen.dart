@@ -1,6 +1,8 @@
 import 'package:crafty_bay/Screens/login_screen.dart';
+import 'package:crafty_bay/Screens/sign_in.dart';
 import 'package:crafty_bay/Screens/user_info.dart';
 import 'package:crafty_bay/paths/assetpaths.dart';
+import 'package:crafty_bay/upload_image_screen.dart';
 import 'package:crafty_bay/widget/catagory_frame.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -22,9 +24,23 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+
+            SizedBox(height: 80,),
+            TextButton(onPressed: (){Navigator.pushNamed(context, Signin.name);}, child: Text("Theme and Language")),
+            SizedBox(height: 20,),
+            TextButton(onPressed: (){Navigator.push(context, MaterialPageRoute(builder:(context) => UploadImageScreen(),));}, child: Text("Upload Image")),
+
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: SvgPicture.asset(Assetpaths.logo_nav),
-        automaticallyImplyLeading: false,
+        //automaticallyImplyLeading: false,
         actions: [
           ActionButtonWidget(icons: Icons.person_outline, callback: () {  Navigator.push(context, MaterialPageRoute(builder: (context) => UserInfo(),));},),
           SizedBox(width: 8,),

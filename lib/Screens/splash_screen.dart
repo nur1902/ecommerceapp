@@ -1,5 +1,4 @@
 import 'package:crafty_bay/Screens/Main/main_nav_bar.dart';
-import 'package:crafty_bay/Screens/home_screen.dart';
 import 'package:crafty_bay/Screens/sign_up_screen.dart';
 import 'package:crafty_bay/Screens/sign_in.dart';
 import 'package:crafty_bay/paths/assetpaths.dart';

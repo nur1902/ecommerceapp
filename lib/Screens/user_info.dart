@@ -50,7 +50,7 @@ class _UserInfoState extends State<UserInfo> {
 
     if (loggedIn=='getout') {
       print("Hellllllllllllllllllllllllllllllllllllll000000000000000000");
-      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => MainNavBar(),), (route) => false,);
+      Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => SignInScreen(),), (route) => false,);
     }
 
   }
