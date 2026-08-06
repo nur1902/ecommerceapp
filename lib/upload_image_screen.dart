@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
 class UploadImageScreen extends StatefulWidget {
   const UploadImageScreen({super.key});
@@ -10,29 +11,74 @@ class UploadImageScreen extends StatefulWidget {
 }
 final ImagePicker _picker = ImagePicker();
 File? selectedImage;
+String? imageName;
 
 class _UploadImageScreenState extends State<UploadImageScreen> {
   Future<void> pickImage() async {
-    final XFile? image = await _picker.pickImage(
-      source: ImageSource.gallery,
-    );
-
-    if (image != null) {
-      setState(() {
-        selectedImage = File(image.path);
-      });
+    try {
+      final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
+      if (image != null) {
+        setState(() => selectedImage = File(image.path));
+        imageName=image.name;
+        uploadImage();
+      }
+    } catch (e) {
+      debugPrint("Gallery pick error: $e");
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Couldn't open gallery: $e")),
+        );
+      }
     }
   }
+
   Future<void> captureImage() async {
-    final XFile? image = await _picker.pickImage(
-      source: ImageSource.camera,
+    try {
+      final XFile? image = await _picker.pickImage(source: ImageSource.camera);
+      if (image != null) {
+        setState(() => selectedImage = File(image.path));
+        imageName=image.name;
+        uploadImage();
+      }
+
+    } catch (e) {
+      debugPrint("Camera error: $e");
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text("Couldn't open camera: $e")),
+        );
+      }
+    }
+  }
+
+
+  Future<void> uploadImage() async {
+    if (selectedImage == null) return;
+
+    //String fileName = generateUniqueFileName(selectedImage!);
+
+    var request = http.MultipartRequest(
+      'POST',
+      Uri.parse("http://daxel.shop/upload.php"),
     );
 
-    if (image != null) {
-      setState(() {
-        selectedImage = File(image.path);
-      });
+    request.fields['image_name'] = imageName!;
+
+    request.files.add(
+      await http.MultipartFile.fromPath(
+        'image',
+        selectedImage!.path,
+        filename: imageName,
+      ),
+    );
+
+    var response = await request.send();
+
+    if (response.statusCode == 200) {
+      print("Uploaded Successfully");
     }
+    print(response.statusCode);
+    print("hello");
   }
 
   // Future<void> selectMethod()async {
@@ -62,6 +108,8 @@ class _UploadImageScreenState extends State<UploadImageScreen> {
             height: 200,
           ),
 
+
+          Text('${imageName}'),
           ElevatedButton(
             onPressed: pickImage,
             child: const Text("Gallery"),
@@ -71,6 +119,7 @@ class _UploadImageScreenState extends State<UploadImageScreen> {
             onPressed: captureImage,
             child: const Text("Camera"),
           ),
+
         ],
       )
     );
